@@ -1,0 +1,19 @@
+<body>
+{{> pacman }}
+</body>
+
+<template name="pacman">
+  <!-- x and y are set in the autorun based on what key is pressed -->
+  <p {{b "text: 'Pacman Position: ' + x + ',' + y"}}></p>
+
+  <!-- We're using the signal (mousePosition) directly so no autorun is needed -->
+  <p {{b "text: 'Mouse Position: ' + mousePosition.x + ',' + mousePosition.y"}}></p>
+
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Pacman_HD.png/240px-Pacman_HD.png"
+    height="50px"
+    width="50px"
+    {{b "style: { position: 'fixed', left: x + 'px', top: y + 'px' }"}}>
+  <!-- I so hate adding the px's             ^^^^           ^^^^   -->
+  <!-- I'm seriously thinking of adding them automagically like React -->
+</template>
